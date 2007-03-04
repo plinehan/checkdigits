@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+<!--- add your stylesheet too --->
+
+<!--- include your java script libraries here -->
+<script language="javascript" type="text/javascript" src="sample.js"></script>
+
+<script language="javascript" type="text/javascript" src="testsample.js"></script>
+
+
+<!--- required --->
+<script language="javascript" type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
+<script language="javascript" type="text/javascript" src="jsunitrunner.js"></script>
+
+</head>
+<body>
+<!--- TBD -- how to set the title -->
+<h1><script language="javascript" type="text/javascript">document.write(jsur_title);</script></h1>
+
+<script language="javascript" type="text/javascript">
+// and run them
+TestRunner.RunTests(jsur_testcases);
+</script>
+</body></html>

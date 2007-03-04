@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>Sample test page testSample.js</title>
+<!--- include your java script libraries here -->
+
+<!--- required --->
+<script language="javascript" type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
+<script language="javascript" type="text/javascript" src="jsunitrunner.js"></script>
+</head>
+<body>
+<h1>Test Page for CheckDihedral.js</h1>
+<script type="text/javascript">
+
+// write your tests here... or include them as a library in the header
+
+// basic pass
+function testPart1()
+{
+    assert(1 != 2);
+}
+
+// basic failure
+function testPart2()
+{
+    assertEquals(1,2);
+
+}
+
+// whoops!
+function testPart3()
+{
+   assert( 1 / 0);
+}
+
+
+// set the 'testcases' var... (can we do auto discovery?)
+var testcases = [testPart1, testPart2, testPart3];
+
+// and run them
+TestRunner.RunTests(testcases);
+
+</script>
+</body></html>
