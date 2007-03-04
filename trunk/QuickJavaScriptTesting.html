@@ -1,0 +1,86 @@
+
+<h1>
+
+<p>
+So I wrote some tricky semi-mathemetical javascript functions.  I was
+looking for a unit test framework.  jsunit had all the features, but
+it seems still too hard just write a darn test and see the results.
+My experience if you can't write up a simple unit test and see the
+results in 30s or have to read a lot of documentation then developers
+won't use it.
+</p>
+
+<p>
+With jsunirunner.js you write a most minimal HTML file, either include
+your javascript test functions or embed them directly , and write two
+lines of javscript telling what tests to run.  You'll get a clear
+output of the results.
+</p>
+
+<p>
+Oh.  You don't like the output format?  It's super easy to change.
+Don't worry about licensing the code... it's free.  Plus, the HTML is
+so minimal you can autogenerate it in your Make/Build system.
+</p>
+
+<ul>
+<li>assert</li>
+<li>assertTrue</li>
+<li>assertFalse</li>
+<li>etc</li>
+<ul>
+
+<h2> Do it </h2>
+
+No formal output function, definition of test suites, or call back
+functions.  Just write up a minimal HTML file and write two lines of
+javascript code to test.  Bammo.  Oh you don't like the output format?
+Just change it.  The code is public domain.  It would be swell if you
+keep the credits, and send in patches and improvements.  But I don't
+require it.
+
+<pre>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>Sample test page testSample.js</title>
+<!--- include your java script libraries here -->
+
+<!--- required --->
+<script language="javascript" type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
+<script language="javascript" type="text/javascript" src="jsunitrunner.js"></script>
+</head>
+<body>
+<h1>Test Page for CheckDihedral.js</h1>
+<script type="text/javascript">
+
+// write your tests here... or include them as a library in the header
+
+// basic pass
+function testPart1()
+{
+    assert(1 != 2);
+}
+
+// basic failure
+function testPart2()
+{
+    assertEquals(1,2);
+
+}
+
+// whoops!
+function testPart3()
+{
+   assert( 1 / 0);
+}
+
+
+// set the 'testcases' var... (can we do auto discovery?)
+var testcases = [testPart1, testPart2, testPart3];
+
+// and run them
+TestRunner.RunTests(testcases);
+
+</script>
+</body></html>

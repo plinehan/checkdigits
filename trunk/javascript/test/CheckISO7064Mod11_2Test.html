@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Test Page for CheckISO7064Mod11_2.js</title>
+<script type="text/javascript" src="../CheckISO7064Mod11_2.js"></script>
+<script type="text/javascript" src="coretest.js"></script>
+<script type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
+<script type="text/javascript" src="jsunitrunner.js"></script>
+</head>
+<body>
+<h1>CheckISO7064Mod11_2 Test</h1>
+<script language="javascript" type="text/javascript">
+
+function getCheckInstance() {
+   return CheckISO7064Mod11_2;
+}
+
+function badTransposition(a, b) {
+   return (b == 'X');
+}
+
+function testExample() {
+   var cd = getCheckInstance();
+// example on page 5
+assertEquals(0, cd.computeCheck("0794"));
+assertEquals("07940", cd.encode("0794"));
+assertTrue(cd.verify("07940"));
+// example on page 6
+assertEquals(10, cd.computeCheck("079"));
+assertEquals("079X", cd.encode("079"));
+assertTrue(cd.verify("079X"));
+
+}
+var testcases = [testCheck, testSingleError, 
+                 testAdjacentTraspositions, testExample];
+TestRunner.RunTests(testcases);
+
+</script>
+</body>
+</html>
