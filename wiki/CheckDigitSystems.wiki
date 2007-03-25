@@ -21,7 +21,7 @@ It catches all single digit errors, but does not catch transposition errors with
 
 The ISO 7074 standard defines a family of check digits in the form of "Mod N+1,N".
 
-Usage: blood bags!
+Usage: [http://www.eurocode.org/guides/checkdig/english/index.html blood bags]
 
 It catches all single digit errors but does not catch transposition errors "01" → "10" (but not vice-versa) and "34" → "43" (but not vice-versa).
 ISO 7064 Mod 97,10
@@ -30,7 +30,7 @@ This scheme produces two digits as a check. And as a result, it catches just abo
 
 It also has an especially compact formula. The check digits are given by `mod(98 - mod(data * 100, 97), 97)` and the verification is just `mod(data_check,97) == 1`. In practice an alternate algorithm (based on Horner's Rule) is used to avoid overflow issues.
 
-Usage: banking
+Usage: [http://a9.com/?q=banking+check+digit+mod+97+10 banking]
 
 ==AlphaNumeric Systems==
 
@@ -47,14 +47,13 @@ Usage: Medical Labeling, Blood
 ===ISO 7064 Mod 17,16===
 
 This scheme works similar to Mod 11,10, but is defined but uses hexadecimal digits ('0' - '9', 'A' - 'F') for the data and check digit. Oddly it's not actually in the ISO 7064 spec, but some other ISO spec
-Usage ISAN, V-ISAN -- (specication and examples)
-
+Usage ISAN, V-ISAN
 
 === ISO 7064 Mod 37,36===
 
 This scheme works similar to Mod 11,10, but is defined to use alphanumeric characters '0' -'9', 'A' - 'Z' for the data and check digit
 
-Usage: Livestock identification (not the primary source, but beats me how to look the appropriate USDA "docket")
+Usage: [http://www.beefusa.org/NEWSLivestockIdentificationUseofAlternativeNumberingSystems10381.aspx  Livestock identification] (not the primary source, but beats me how to look the appropriate USDA "docket")
 
 
 ===Oddballs: ISO 7064 Mod 27,26, Mod 661-26, Mod 1271-36===
