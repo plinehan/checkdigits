@@ -28,7 +28,7 @@ ISO 7064 Mod 97,10
 
 This scheme produces two digits as a check. And as a result, it catches just about every possible error. If you can afford the extra digit, this system is superior to the dihedral check.
 
-It also has an especially compact formula. The check digits are given by mod(98 - mod(data * 100, 97), 97) and the verification is just mod(data_check,97) == 1. In practice an alternate algorithm (based on Horner's Rule) is used to avoid overflow issues.
+It also has an especially compact formula. The check digits are given by `mod(98 - mod(data * 100, 97), 97)` and the verification is just `mod(data_check,97) == 1`. In practice an alternate algorithm (based on Horner's Rule) is used to avoid overflow issues.
 
 Usage: banking
 
@@ -40,12 +40,14 @@ Check digits schemes can also work on data that contains more than just digits.
 ===ISO 7064 Mod 11,2===
 
 The data digits must be '0' - '9' but the check digit may also be 'X' (representing the value 10). Usage: unknown. This is not the ISBN check.
-ISO 7064 Mod 37,2
+
+===ISO 7064 Mod 37,2===
 Usage: Medical Labeling, Blood
-ISO 7064 Mod 17,16
+
+===ISO 7064 Mod 17,16===
 
 This scheme works similar to Mod 11,10, but is defined but uses hexadecimal digits ('0' - '9', 'A' - 'F') for the data and check digit. Oddly it's not actually in the ISO 7064 spec, but some other ISO spec
-Usage ISAN, V-ISAN -- (specication and examples
+Usage ISAN, V-ISAN -- (specication and examples)
 
 
 === ISO 7064 Mod 37,36===
