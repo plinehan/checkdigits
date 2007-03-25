@@ -42,7 +42,7 @@ Check digits schemes can also work on data that contains more than just digits.
 The data digits must be '0' - '9' but the check digit may also be 'X' (representing the value 10). Usage: unknown. This is not the ISBN check.
 
 ===ISO 7064 Mod 37,2===
-Usage: Medical Labeling, Blood
+Usage: Medical Labeling, [https://www.the-stationery-office.co.uk/nbs/rdbk2001/blood62.htm  Blood]
 
 ===ISO 7064 Mod 17,16===
 
