@@ -9,8 +9,9 @@ Decimal check systems operate on a string of digits '0' - '9', and also produce 
 ===Verhoeff's Dihedral Check===
 This scheme was first invented in 1969 by Verhoeff, and originally used on pre-euro German banknotes. It uses dihedral addition (specifically, the additive Group D5, which is based on rotations of a pentagon), and a permutation array (iterating (01589427)(36) ) to produce the check digit. While sounding complicated, the implemetation is very simple.
 
-It is the only single digit check scheme that catches all single digit errors, and all single transpositions. Use this for new projects
-Luhn Formula, Mod 10
+It is the only single digit check scheme that catches all single digit errors, and all single transpositions. Use this for new projects.
+
+===Luhn Formula, Mod 10===
 
 This formaula is known by many names: the "Luhn Formula", "The IBM Check", "Mod 10", and is officially specified in "Annex B to ISO/IEC 7812, Part 1" and in "ANSI X4.13". It is used as the check scheme on credit cards such as Visa, Master Card, and American Express.
 
