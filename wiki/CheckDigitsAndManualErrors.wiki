@@ -1,4 +1,5 @@
 #summary Appropraite usage of check digits and manual errors
+#labels Featured
 
 = Check Digits: Yes =
 
