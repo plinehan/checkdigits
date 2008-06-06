@@ -25,7 +25,8 @@ The ISO 7074 standard defines a family of check digits in the form of "Mod N+1,N
 Usage: [http://www.eurocode.org/guides/checkdig/english/index.html blood bags]
 
 It catches all single digit errors but does not catch transposition errors "01" → "10" (but not vice-versa) and "34" → "43" (but not vice-versa).
-ISO 7064 Mod 97,10
+
+===ISO 7064 Mod 97,10===
 
 This scheme produces two digits as a check. And as a result, it catches just about every possible error. If you can afford the extra digit, this system is superior to the dihedral check.
 
