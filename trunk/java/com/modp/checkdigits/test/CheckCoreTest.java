@@ -103,7 +103,7 @@ public abstract class CheckCoreTest extends TestCase {
 			for (int j = 0; j < c.length; ++j) {
 				for (int k = 1; k <= 9; ++k) {
 					char nc = (char)(((c[j]-'0' + 1) % 10) + '0');
-					c[j] =(char)(((c[j]-'0' + 1) % 10) + '0');
+					c[j] = nc;
 					assertFalse(check.verify(new String(c)));
 				}
 				// restore original value
