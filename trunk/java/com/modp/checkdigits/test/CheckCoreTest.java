@@ -86,8 +86,6 @@ public abstract class CheckCoreTest extends TestCase {
 			
 			// make sure it verifies
 			assertTrue(check.verify(e));
-			
-
 		}
 	}
 	
@@ -123,13 +121,7 @@ public abstract class CheckCoreTest extends TestCase {
 		for (int i = 0; i < cases.length; ++i) {
 			String c = check.encode(cases[i]);
 			for (int j = 0; j < c.length() - 1; ++j) {
-				// transpose at (j, j+1)
-				String nc = c.substring(0,j) + 
-					c.charAt(j+1) + c.charAt(j)+
-						c.substring(j+2);
-				// make sure we didn't screw up
-				assertEquals(nc.length(), c.length());
-				
+				String nc = getTranposed(c, j);
 				// if original input isn't symmetrical, do a test
 				if (!(c.equals(nc) || badTransposition(c.charAt(j), c.charAt(j+1)))) {
 					if (check.verify(nc)) {
@@ -152,13 +144,7 @@ public abstract class CheckCoreTest extends TestCase {
 		for (int i = 0; i < cases.length; ++i) {
 			String c = check.encode(cases[i]);
 			for (int j = 0; j < c.length() - 1; ++j) {
-				// transpose at (j, j+1)
-				String nc = c.substring(0,j) + 
-					c.charAt(j+1) + c.charAt(j)+
-						c.substring(j+2);
-				// make sure we didn't screw up
-				assertEquals(nc.length(), c.length());
-				
+				String nc = getTranposed(c, j);
 				// if original input isn't symmetrical, do a test
 				if (!c.equals(nc) && badTransposition(c.charAt(j), c.charAt(j+1))) {
 					if (check.verify(nc)) {
@@ -170,6 +156,7 @@ public abstract class CheckCoreTest extends TestCase {
 			}
 		}
 	}
+	
 	/**
 	 * Test to make sure <code>verify</code> doesn't throw an exception.
 	 * 
@@ -185,5 +172,19 @@ public abstract class CheckCoreTest extends TestCase {
 		assertFalse(check.verify("-1"));
 		assertFalse(check.verify("_bad_"));
 		assertFalse(check.verify("0.345"));
+	}
+
+	/**
+	 * Returns a string identical to the given string, but with the characters
+	 * at (j, j+1) transposed.
+	 */
+	private String getTranposed(String c, int j) {
+		// transpose at (j, j+1)
+		String nc = c.substring(0,j) + 
+			c.charAt(j+1) + c.charAt(j)+
+				c.substring(j+2);
+		// make sure we didn't screw up
+		assertEquals(nc.length(), c.length());
+		return nc;
 	}
 }
